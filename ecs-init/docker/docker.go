@@ -57,9 +57,9 @@ type Client struct {
 	fs     fileSystem
 }
 
-// NewClient reutrns a new Client
+// NewClient returns a new Client
 func NewClient() (*Client, error) {
-	// Create a backoff for pinging the docker socker. This should result in 17-19
+	// Create a backoff for pinging the docker socket. This should result in 17-19
 	// seconds of delay in the worst-case between different actions that depend on
 	// docker
 	pingBackoff := backoff.NewBackoff(minBackoffDuration, maxBackoffDuration, backoffJitterMultiple,
